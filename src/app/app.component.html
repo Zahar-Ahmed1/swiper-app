@@ -1,17 +1,19 @@
-<nav class="navbar" #navbar>
-  <div class="logo">Pontaloants</div>
-  <div class="menu-toggle" (click)="toggleMenu()">
-    <span></span><span></span><span></span>
-  </div>
-  <ul class="nav-links" [class.active]="menuOpen">
-    <li><a href="#hero" (click)="closeMenu()">Accueil</a></li>
-    <li><a href="#about" (click)="closeMenu()">À propos</a></li>
-    <li><a href="#collection" (click)="closeMenu()">Collection</a></li>
-    <li><a href="#contact" (click)="closeMenu()">Contact</a></li>
-  </ul>
-</nav>
+<app-nav></app-nav>
+<div class="smooth-wrapper" >
+  <div class="smooth-content" #smoothContent>
+
+<app-hero-section></app-hero-section>
+    <app-products-section></app-products-section>
 <app-slider></app-slider>
-<app-cadre-produit></app-cadre-produit>
-<app-v-p></app-v-p>
+    <app-more-products-section></app-more-products-section>
+        <!--<app-cadre-produit></app-cadre-produit>-->
+        <!--<app-inspiration-section></app-inspiration-section>-->
+        <!--<app-produits></app-produits>-->
+<!--        <app-scroll-cart></app-scroll-cart>-->
+
+<!--       <app-product-detail></app-product-detail>-->
+  </div>
+</div>
+<app-footer></app-footer >
 
 

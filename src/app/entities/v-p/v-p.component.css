@@ -9,20 +9,7 @@
   overflow: hidden;
 
 }
-#titre {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10vh; /* prend toute la hauteur de l'écran */
-  margin: 0;
-  font-size: 2rem; /* optionnel : pour styliser le texte */
-  color: #333;
-  top: 90%;
-}
 
-.about{
-  height: 700px;
-}
 .collection{
   height: 700px;
 }
@@ -52,3 +39,8 @@
   border-radius: 16px;
   object-fit: cover;
 }
+
+
+
+
+

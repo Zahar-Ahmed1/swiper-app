@@ -1,0 +1,38 @@
+
+
+<section class="inspiration-container">
+  <h2 class="section-title">Plus d'inspirations</h2>
+  <div class="inspiration-list">
+    <div class="inspiration-item" *ngFor="let item of inspirations">
+      <img [src]="item.image" [alt]="item.title" />
+      <p class="label">{{ item.title }}</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+  <div class="section-header">
+    <h2>Incontournables Miu Miu</h2>
+    <div class="nav-buttons">
+      <button (click)="scrollLeft()">&#8592;</button>
+      <button (click)="scrollRight()">&#8594;</button>
+    </div>
+  </div>
+
+  <div class="carousel-container" #carousel>
+    <div class="product-card" *ngFor="let product of products">
+      <img [src]="product.image" alt="product" />
+      <h4>{{ product.brand }}</h4>
+      <p class="description">{{ product.description }}</p>
+      <p class="price">{{ product.price | currency: 'EUR' }}</p>
+    </div>
+  </div>
+
+
+

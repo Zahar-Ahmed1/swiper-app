@@ -27,9 +27,17 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import {VPComponent} from './entities/v-p/v-p.component';
 import {VVComponent} from './entities/v-v/v-v.component';
-import {VGComponent} from './entities/v-g/v-g.component';
 import {SliderComponent} from './entities/slider/slider.component';
 import {CadreProduitComponent} from './entities/cadre-produit/cadre-produit.component';
+import {FooterComponent} from './entities/footer/footer.component';
+import {InspirationSectionComponent} from './entities/inspiration-section/inspiration-section.component';
+import {NavComponent} from './entities/nav/nav.component';
+import {ProduitsComponent} from './entities/produits/produits.component';
+import {ProductDetailComponent} from './entities/product-detail/product-detail.component';
+import {ScrollCartComponent} from './entities/scroll-cart/scroll-cart.component';
+import {HeroSectionComponent} from './entities/hero-section/hero-section.component';
+import {ProductsSectionComponent} from './entities/products-section/products-section.component';
+import {MoreProductsSectionComponent} from './entities/more-products-section/more-products-section.component';
 
 gsap.registerPlugin(ScrollTrigger);
 @Component({
@@ -39,9 +47,18 @@ gsap.registerPlugin(ScrollTrigger);
     CommonModule,
     VPComponent,
     VVComponent,
-    VGComponent,
+
     SliderComponent,
     CadreProduitComponent,
+    FooterComponent,
+    InspirationSectionComponent,
+    NavComponent,
+    ProduitsComponent,
+    ProductDetailComponent,
+    ScrollCartComponent,
+    HeroSectionComponent,
+    ProductsSectionComponent,
+    MoreProductsSectionComponent,
 
 
   ],
@@ -60,33 +77,26 @@ gsap.registerPlugin(ScrollTrigger);
 
 })
 export class AppComponent  implements AfterViewInit {
-
-  menuOpen = false;
-
-  toggleMenu() {
-    this.menuOpen = !this.menuOpen;
-  }
-
-  closeMenu() {
-    this.menuOpen = false;
-  }
-  @ViewChild('navbar') navbar!: ElementRef;
+  @ViewChild('smoothContent', { static: true }) smoothContent!: ElementRef;
 
   ngAfterViewInit(): void {
-    gsap.to(this.navbar.nativeElement, {
-      backgroundColor: '#ffffff',
-      padding: '10px 2rem',
-      boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
-      scrollTrigger: {
-        trigger: document.body,
-        start: 'top top+=10',
-        end: 'bottom bottom',
-        toggleClass: 'scrolled',
-        scrub: true
-      }
-    });
-  }
+    let current = 0;
+    let target = 0;
+    let ease = 0.075;
 
+    const updateScroll = () => {
+      target = window.scrollY;
+      current += (target - current) * ease;
+
+      gsap.set(this.smoothContent.nativeElement, {
+        y: -current,
+      });
+
+      requestAnimationFrame(updateScroll);
+    };
+
+    updateScroll();
+  }
   title = 'test-app';
 
 

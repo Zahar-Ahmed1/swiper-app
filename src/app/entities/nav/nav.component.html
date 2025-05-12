@@ -1,0 +1,12 @@
+<nav class="navbar" #navbar>
+  <div class="logo">Pontaloants</div>
+  <div class="menu-toggle" (click)="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+  <ul class="nav-links" [class.active]="menuOpen">
+    <li><a href="#hero" (click)="closeMenu()">Accueil</a></li>
+    <li><a href="#about" (click)="closeMenu()">À propos</a></li>
+    <li><a href="#collection" (click)="closeMenu()">Collection</a></li>
+    <li><a href="#contact" (click)="closeMenu()">Contact</a></li>
+  </ul>
+</nav>

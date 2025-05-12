@@ -4,9 +4,9 @@ import {Component, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
   selector: 'app-cadre-produit',
   imports: [],
   standalone : true,
-
-  templateUrl: './cadre-produit.component.html',
   schemas : [CUSTOM_ELEMENTS_SCHEMA],
+  templateUrl: './cadre-produit.component.html',
+
   styleUrl: './cadre-produit.component.css'
 })
 

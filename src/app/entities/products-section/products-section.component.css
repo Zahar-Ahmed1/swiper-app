@@ -1,0 +1,32 @@
+.products {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+  background: #111;
+  padding: 4rem 2rem;
+
+  .card {
+    width: 40%;
+    padding: 2rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    transition: transform 0.3s ease;
+
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    &:hover {
+      transform: scale(1.05) rotateY(0deg);
+    }
+  }
+}

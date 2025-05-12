@@ -19,7 +19,7 @@ export class VVComponent implements AfterViewInit {
     gsap.from(this.footer.nativeElement, {
       y: 100,
       opacity: 300,
-      duration: 9.2,
+      duration: 1.2,
       ease: 'power3.out',
       scrollTrigger: {
         trigger: this.footer.nativeElement,

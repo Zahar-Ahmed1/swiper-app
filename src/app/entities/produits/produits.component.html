@@ -1,0 +1,31 @@
+
+<div class="container">
+<!-- product-grid.component.html -->
+<div class="page-header">
+  <h1>Beauté, maquillage, soins et parfums</h1>
+  <div class="categories">
+    <button *ngFor="let cat of categories">{{ cat }}</button>
+  </div>
+  <div class="filters">
+    <select><option>Marque</option></select>
+    <select><option>Couleur</option></select>
+    <select><option>Promotions</option></select>
+    <select><option>Prix</option></select>
+  </div>
+</div>
+
+<div class="product-grid">
+  <div class="product-card" *ngFor="let product of products1">
+    <div class="image-container">
+      <img [src]="product.image" [alt]="product.name" />
+      <span *ngIf="product.badge" class="badge">{{ product.badge }}</span>
+      <button class="heart">♡</button>
+    </div>
+    <div class="info">
+      <h4>{{ product.brand }}</h4>
+      <p>{{ product.name }}</p>
+      <small>{{ product.desc }}</small>
+    </div>
+  </div>
+</div>
+</div>

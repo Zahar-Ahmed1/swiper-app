@@ -1,14 +1,12 @@
-import {AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 
 @Component({
-  selector: 'app-v-p',
-  imports: [CommonModule],
-  templateUrl: './v-p.component.html',
-  styleUrl: './v-p.component.css'
-  ,standalone: true,
+  selector: 'app-scroll-cart',
+  imports: [],
+  templateUrl: './scroll-cart.component.html',
+  styleUrl: './scroll-cart.component.css'
 })
-export class VPComponent implements AfterViewInit {
+export class ScrollCartComponent implements AfterViewInit {
 
 
 
@@ -36,12 +34,9 @@ export class VPComponent implements AfterViewInit {
     };
 
     // Exemple : ajuster les vitesses X et Y selon l'effet désiré
-    move(this.card1, 0.4,0);   // droite + bas
-    move(this.card2, -0, 0.2); // gauche + haut
-    move(this.card3, 0.03, 0.09);   // droite + bas
-    move(this.card4, -0.02, -0.01); // gauche + haut lent
-    move(this.card5, 0.07, -0.1);   // droite + haut rapide
-    move(this.card6, -0.07, -0.1);  // gauche + haut rapide
-  }
-}
+    move(this.card1, 0,0.4);   // droite + bas
+    move(this.card2, -0, 0); // gauche + haut
 
+  }
+
+}

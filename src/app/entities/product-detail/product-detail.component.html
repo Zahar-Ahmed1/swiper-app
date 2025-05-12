@@ -1,0 +1,55 @@
+<div class="product-container">
+  <!-- Section gauche : Galerie -->
+  <div class="gallery">
+    <div class="thumbnails">
+      <img *ngFor="let img of product.images" [src]="img" (click)="selectImage(img)" [class.active]="img === selectedImage" />
+    </div>
+    <div class="main-image">
+      <img [src]="selectedImage" alt="Main Image" />
+    </div>
+  </div>
+
+  <!-- Section droite : Détails -->
+  <div class="details">
+    <h1 class="brand">Miu Miu</h1>
+    <p class="subtitle">T-shirt en jersey côtelé</p>
+    <a href="#" class="link">Description détaillée</a>
+
+    <div class="mini-gallery">
+      <img *ngFor="let img of product.colorImages" [src]="img" />
+    </div>
+    <p class="color">Couleur : Gris</p>
+
+    <p class="price">620,00 € <span class="red-dot">● POINT ROUGE</span></p>
+
+    <div class="selectors">
+      <select [(ngModel)]="selectedSize">
+        <option value="">Sélectionner une taille</option>
+        <option *ngFor="let size of sizes">{{ size }}</option>
+      </select>
+
+      <input type="number" [(ngModel)]="quantity" min="1" />
+    </div>
+
+    <button class="add-to-cart">AJOUTER AU PANIER</button>
+
+    <div class="shipping">
+      <p><strong>Vendu et expédié par Galeries Lafayette</strong></p>
+      <p>Livraison à domicile express<br />
+        <span class="green">Offert</span> - sous 24h à 48h ouvrées</p>
+      <a href="#">Voir toutes les options de livraison</a>
+    </div>
+
+    <p class="return">Retours gratuits sous 30 jours</p>
+
+    <div class="store-check">
+      <p>Vérifier la disponibilité de l’article en magasin</p>
+      <button class="store-button">CHOISIR UN MAGASIN</button>
+    </div>
+
+    <div class="payments">
+      <p>Moyens de paiement acceptés :</p>
+      <img src="assets/payments.png" alt="moyens de paiement" />
+    </div>
+  </div>
+</div>
